@@ -6,7 +6,22 @@ olo<!DOCTYPE html>
   <title>Spatial Analytica</title>
   <style>
     body { margin: 0; font-family: sans-serif; line-height: 1.6; }
-    header { background: #fff; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
+    header {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    header.shrink {
+      padding: 10px;
+      background: #ffffffcc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
     nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: auto; }
     nav a { margin-left: 20px; text-decoration: none; color: black; font-weight: bold; }
     .hero { text-align: center; padding: 80px 20px; background: #fafafa; }
