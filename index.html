@@ -24,7 +24,21 @@ olo<!DOCTYPE html>
     
     nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: auto; }
     nav a { margin-left: 20px; text-decoration: none; color: black; font-weight: bold; }
-    .hero { text-align: center; padding: 80px 20px; background: #fafafa; }
+    .hero {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      text-align: center;
+      padding: 80px 20px;
+      background: #fafafa;
+      transition: all 0.3s ease;
+    }
+    .hero.shrink {
+      padding: 20px 20px;
+      background: #ffffffcc;
+    }
+    .hero.shrink h1 {font-size: 1.8em;}
+    .hero.shrink p {fort-size: 1em;}
     .hero h1 { font-size: 2.5em; margin-bottom: 10px; }
     .hero p { font-size: 1.2em; color: #555; }
     section { max-width: 800px; margin: auto; padding: 60px 20px; }
