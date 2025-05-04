@@ -37,11 +37,23 @@
       flex-wrap: wrap;
     }
 
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
     nav a {
-      margin-left: 20px;
       text-decoration: none;
       color: black;
       font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8em;
+      cursor: pointer;
     }
 
     .hero {
@@ -168,6 +180,8 @@
       height: 600px;
       border: none;
       display: block;
+      pointer-events: auto;
+      touch-action: auto;
     }
 
     footer {
@@ -178,22 +192,24 @@
     }
 
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
       nav {
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
-      }
-
-      nav div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      nav a {
-        margin-left: 0;
-        font-size: 1rem;
       }
 
       .hero h1 {
@@ -206,10 +222,6 @@
 
       section {
         padding: 20px 16px;
-      }
-
-      .team-member {
-        margin-top: 20px;
       }
 
       .headshot {
@@ -236,7 +248,8 @@
   <header>
     <nav>
       <div><strong>SPATIAL ANALYTICA</strong></div>
-      <div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#team">Team</a>
         <a href="#projects">Projects</a>
@@ -277,7 +290,7 @@
     <div class="widget-frame">
       <iframe 
         src="globe_with_points.html"
-        sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups">
+        sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups allow-presentation allow-modals">
       </iframe>
     </div>
 
@@ -317,6 +330,11 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+
     window.addEventListener('scroll', function () {
       const hero = document.querySelector('.hero');
       if (window.scrollY > 50) {
