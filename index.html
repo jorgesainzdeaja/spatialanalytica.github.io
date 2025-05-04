@@ -19,7 +19,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      transition: all 0.3s ease;
     }
 
     header.shrink {
@@ -34,15 +33,19 @@
       align-items: center;
       max-width: 1000px;
       margin: auto;
-      flex-wrap: wrap;
+      position: relative;
     }
 
-    nav .nav-links {
+    .nav-brand {
+      font-weight: bold;
+    }
+
+    .nav-links {
       display: flex;
       gap: 20px;
     }
 
-    nav a {
+    .nav-links a {
       text-decoration: none;
       color: black;
       font-weight: bold;
@@ -63,7 +66,7 @@
       text-align: center;
       padding: 80px 20px;
       background: #fafafa;
-      transition: all 0.3s ease, opacity 0.5s ease, color 0.5s ease;
+      transition: all 0.3s ease;
     }
 
     .hero h1 {
@@ -81,31 +84,10 @@
       margin: auto;
     }
 
-    .hero.shrink {
-      padding: 20px 20px;
-      background: #ffffffcc;
-      opacity: 0.3;
-    }
-
-    .hero.shrink h1 {
-      font-size: 1.8em;
-      color: black;
-    }
-
-    .hero.shrink p {
-      font-size: 1em;
-      color: #333;
-    }
-
     section {
       max-width: 1000px;
       margin: 40px auto;
       padding: 40px 24px;
-    }
-
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
     }
 
     .headshot {
@@ -134,7 +116,6 @@
       border-radius: 8px;
       font-weight: bold;
       font-size: 16px;
-      transition: background-color 0.3s ease;
     }
 
     .button:hover {
@@ -165,23 +146,13 @@
       object-fit: cover;
     }
 
-    .project-feature > div:last-child {
-      flex: 1;
-    }
-
-    .widget-frame {
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
     .widget-frame iframe {
       width: 100%;
       height: 600px;
       border: none;
-      display: block;
       pointer-events: auto;
       touch-action: auto;
+      display: block;
     }
 
     footer {
@@ -199,17 +170,17 @@
       .nav-links {
         display: none;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
         width: 100%;
-        padding-top: 10px;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       .nav-links.show {
         display: flex;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .hero h1 {
@@ -220,17 +191,9 @@
         font-size: 1em;
       }
 
-      section {
-        padding: 20px 16px;
-      }
-
       .headshot {
         width: 150px;
         height: 150px;
-      }
-
-      .widget-frame iframe {
-        height: 400px;
       }
 
       .project-feature {
@@ -241,13 +204,17 @@
         width: 100%;
         height: auto;
       }
+
+      .widget-frame iframe {
+        height: 400px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div><strong>SPATIAL ANALYTICA</strong></div>
+      <div class="nav-brand">SPATIAL ANALYTICA</div>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
@@ -266,9 +233,7 @@
 
   <section id="about">
     <h2>About</h2>
-    <p><strong>Spatial Analytica</strong> is a geospatial design and urban innovation consultancy founded by Dr. Jorge Sainz de Aja, an urban computation expert with a robust background in architecture and urban design. With over a decade of experience as a practicing urban designer, Jorge brings a deep understanding of spatial, social, and regulatory dynamics into data-driven processes — positioning Spatial Analytica at the intersection of design thinking and computational strategy.</p>
-    <p>The company bridges traditional urban design expertise with advanced spatial analytics, using data science to inform master planning, policy development, and public engagement. With international experience across Europe, Asia, and the Middle East — including collaborations with the Asian Development Bank, Grimshaw Architects, McGregor Coxall, and public sector institutions — Spatial Analytica integrates computational urbanism with actionable insights.</p>
-    <p> Specialities include geospatial modelling, digital twins, KPI-based evaluation, generative design tools, and interactive platforms that support more livable, resilient, and equitable cities.</p>
+    <p>Spatial Analytica is a geospatial design and urban innovation consultancy...</p>
   </section>
 
   <section id="team">
@@ -276,10 +241,9 @@
     <div class="team-member">
       <img src="Jorge_Headshot.jpeg" alt="Jorge Sainz de Aja" class="headshot" />
       <h3>Dr. Jorge Sainz de Aja Curbelo - Director</h3>
-      <p>Jorge is a registered architect in Spain and the UK, with over 13 years of international experience in urban design. He holds a Master’s and PhD in data-driven urban regeneration strategies, as well as a professional qualification in data analysis.</p>
-      <p>He specialises in geospatial analysis and urban computation, applying advanced spatial tools to support evidence-based urban design and masterplanning. His work bridges the gap between design and data, informed by projects across the UK, Europe, the Middle East, and Southeast Asia.</p>
+      <p>Jorge is a registered architect in Spain and the UK...</p>
     </div>
-    <p style="text-align: center; margin-top: 10px;">
+    <p style="text-align: center;">
       <a href="JSC_CV.pdf" download class="button">Download CV</a>
     </p>
   </section>
@@ -288,23 +252,24 @@
     <h2>Projects</h2>
 
     <div class="widget-frame">
-      <iframe 
+      <iframe
         src="globe_with_points.html"
+        allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer; autoplay"
         sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups allow-presentation allow-modals">
       </iframe>
     </div>
 
-    <h3 style="margin-top: 0;">Every red point marks a project; every project tells a story.</h3>
-    <p>Specialising in spatial analytics, design support, and innovation services, we focus on the EMEA region and Southeast Asia — yet our footprint spans the globe, from the Americas to Oceania and Africa.</p>
+    <h3>Every red point marks a project; every project tells a story.</h3>
+    <p>Specialising in spatial analytics, design support, and innovation services...</p>
 
     <div class="project-feature">
       <div>
-        <img src="Project_Groundwater_Framework.png" alt="Community Flood Resilience Framework" />
+        <img src="Project_Groundwater_Framework.png" alt="Resilience Framework" />
       </div>
       <div>
-        <h3 style="margin-top: 0;">Innovating Resilience: A New Framework for the Future</h3>
+        <h3>Innovating Resilience: A New Framework for the Future</h3>
         <p>
-          We have developed an innovative <strong>Community Flood Resilience Framework</strong> to transform how communities adapt to groundwater flooding. Built from the ground up, this pioneering approach fuses data, local knowledge, and forward-thinking strategies into a practical, scalable system. Through our three dynamic phases — <em>Discovery, Evaluation, and Socialisation</em> — we unlock measurable insights across five key resilience areas: infrastructure, environment, economy, institutions, and society. Designed to be adaptable and community-led, the framework provides a powerful tool for tracking progress, guiding investment, and accelerating resilience in a changing climate.
+          We have developed an innovative Community Flood Resilience Framework...
         </p>
       </div>
     </div>
@@ -312,15 +277,15 @@
 
   <section id="capabilities">
     <h2>Capabilities</h2>
-    <p>Urban analytics, participatory design, data visualisation, sustainability assessment, policy innovation, spatial strategy, and more.</p>
+    <p>Urban analytics, participatory design, data visualisation...</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>
-      Email: jorgesainzdeaja@gmail.com<br />
-      Phone: (+44)7543202736<br />
-      LinkedIn: www.linkedin.com/in/jorgesainzdeaja<br />
+      Email: jorgesainzdeaja@gmail.com<br>
+      Phone: (+44)7543202736<br>
+      LinkedIn: www.linkedin.com/in/jorgesainzdeaja<br>
       GitHub: github.com/jorgesainzdeaja
     </p>
   </section>
@@ -337,11 +302,7 @@
 
     window.addEventListener('scroll', function () {
       const hero = document.querySelector('.hero');
-      if (window.scrollY > 50) {
-        hero.classList.add('shrink');
-      } else {
-        hero.classList.remove('shrink');
-      }
+      hero.classList.toggle('shrink', window.scrollY > 50);
     });
   </script>
 </body>
