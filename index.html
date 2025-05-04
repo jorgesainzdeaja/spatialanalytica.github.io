@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spatial Analytica</title>
   <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
       background-color: #f5f4f0;
     }
@@ -19,12 +25,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-    }
-
-    header.shrink {
-      padding: 10px;
-      background: #ffffffcc;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     nav {
@@ -40,6 +40,13 @@
       font-weight: bold;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      background: none;
+      border: none;
+    }
+
     .nav-links {
       display: flex;
       gap: 20px;
@@ -51,58 +58,28 @@
       font-weight: bold;
     }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8em;
-      cursor: pointer;
-    }
-
     .hero {
-      position: sticky;
-      top: 60px;
-      z-index: 999;
       text-align: center;
       padding: 80px 20px;
       background: #fafafa;
-      transition: all 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
     }
 
     .hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 2.5em;
       color: #94a78d;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
     }
 
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #555;
       max-width: 85%;
       margin: auto;
     }
 
-    .hero.shrink {
-      padding: 20px 20px;
-      background: #ffffffcc;
-    }
-
-    .hero.shrink h1 {
-      font-size: 1.5em;
-      color: #333;
-    }
-
-    .hero.shrink p {
-      font-size: 0.9em;
-      color: #555;
-    }
-
     section {
       max-width: 1000px;
       margin: 40px auto;
-      padding: 40px 24px;
+      padding: 0 24px;
     }
 
     .headshot {
@@ -113,61 +90,16 @@
       border: 5px solid #94a78d;
       display: block;
       margin: 20px auto;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .team-member {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      background-color: #94a78d;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .button:hover {
-      background-color: #3a4535;
-    }
-
-    .project-feature {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 40px;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .project-feature > div:first-child {
-      flex: 0 0 300px;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .project-feature > div:first-child img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .widget-frame iframe {
       width: 100%;
       height: 600px;
       border: none;
+      display: block;
       pointer-events: auto;
       touch-action: auto;
-      display: block;
     }
 
     footer {
@@ -197,36 +129,6 @@
       .nav-links.show {
         display: flex;
       }
-
-      .hero {
-        padding: 60px 16px;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      .headshot {
-        width: 150px;
-        height: 150px;
-      }
-
-      .project-feature {
-        flex-direction: column;
-      }
-
-      .project-feature > div:first-child {
-        width: 100%;
-        height: auto;
-      }
-
-      .widget-frame iframe {
-        height: 400px;
-      }
     }
   </style>
 </head>
@@ -254,18 +156,17 @@
     <h2>About</h2>
     <p><strong>Spatial Analytica</strong> is a geospatial design and urban innovation consultancy founded by Dr. Jorge Sainz de Aja, an urban computation expert with a robust background in architecture and urban design. With over a decade of experience as a practicing urban designer, Jorge brings a deep understanding of spatial, social, and regulatory dynamics into data-driven processes — positioning Spatial Analytica at the intersection of design thinking and computational strategy.</p>
     <p>The company bridges traditional urban design expertise with advanced spatial analytics, using data science to inform master planning, policy development, and public engagement. With international experience across Europe, Asia, and the Middle East — including collaborations with the Asian Development Bank, Grimshaw Architects, McGregor Coxall, and public sector institutions — Spatial Analytica integrates computational urbanism with actionable insights.</p>
-    <p> Specialities include geospatial modelling, digital twins, KPI-based evaluation, generative design tools, and interactive platforms that support more livable, resilient, and equitable cities.</p>
+    <p>Specialities include geospatial modelling, digital twins, KPI-based evaluation, generative design tools, and interactive platforms that support more livable, resilient, and equitable cities.</p>
   </section>
 
   <section id="team">
     <h2>Team</h2>
     <div class="team-member">
       <img src="Jorge_Headshot.jpeg" alt="Jorge Sainz de Aja" class="headshot" />
-      <h2>About</h2>
-    <p><strong>Spatial Analytica</strong> is a geospatial design and urban innovation consultancy founded by Dr. Jorge Sainz de Aja, an urban computation expert with a robust background in architecture and urban design. With over a decade of experience as a practicing urban designer, Jorge brings a deep understanding of spatial, social, and regulatory dynamics into data-driven processes — positioning Spatial Analytica at the intersection of design thinking and computational strategy.</p>
-    <p>The company bridges traditional urban design expertise with advanced spatial analytics, using data science to inform master planning, policy development, and public engagement. With international experience across Europe, Asia, and the Middle East — including collaborations with the Asian Development Bank, Grimshaw Architects, McGregor Coxall, and public sector institutions — Spatial Analytica integrates computational urbanism with actionable insights.</p>
-    <p> Specialities include geospatial modelling, digital twins, KPI-based evaluation, generative design tools, and interactive platforms that support more livable, resilient, and equitable cities.</p>
-  </section>
+      <h3>Dr. Jorge Sainz de Aja Curbelo - Director</h3>
+      <p>Jorge is a registered architect in Spain and the UK, with over 13 years of international experience in urban design. He holds a Master’s and PhD in data-driven urban regeneration strategies, as well as a professional qualification in data analysis.</p>
+      <p>He specialises in geospatial analysis and urban computation, applying advanced spatial tools to support evidence-based urban design and masterplanning. His work bridges the gap between design and data, informed by projects across the UK, Europe, the Middle East, and Southeast Asia.</p>
+    </div>
     <p style="text-align: center;">
       <a href="JSC_CV.pdf" download class="button">Download CV</a>
     </p>
@@ -276,20 +177,20 @@
     <div class="widget-frame">
       <iframe
         src="globe_with_points.html"
-        allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer; autoplay"
-        sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups allow-presentation allow-modals">
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-modals allow-forms">
       </iframe>
     </div>
-    <h3 style="margin-top: 0;">Every red point marks a project; every project tells a story.</h3>
+    <h3>Every red point marks a project; every project tells a story.</h3>
     <p>Specialising in spatial analytics, design support, and innovation services, we focus on the EMEA region and Southeast Asia — yet our footprint spans the globe, from the Americas to Oceania and Africa.</p>
+    <div class="project-feature">
       <div>
         <img src="Project_Groundwater_Framework.png" alt="Community Flood Resilience Framework" />
       </div>
       <div>
         <h3>Innovating Resilience: A New Framework for the Future</h3>
-        <p>
-          We have developed an innovative <strong>Community Flood Resilience Framework</strong> to transform how communities adapt to groundwater flooding. Built from the ground up, this pioneering approach fuses data, local knowledge, and forward-thinking strategies into a practical, scalable system. Through our three dynamic phases — <em>Discovery, Evaluation, and Socialisation</em> — we unlock measurable insights across five key resilience areas: infrastructure, environment, economy, institutions, and society. Designed to be adaptable and community-led, the framework provides a powerful tool for tracking progress, guiding investment, and accelerating resilience in a changing climate.
-        </p>
+        <p>We have developed an innovative <strong>Community Flood Resilience Framework</strong> to transform how communities adapt to groundwater flooding. Built from the ground up, this pioneering approach fuses data, local knowledge, and forward-thinking strategies into a practical, scalable system. Through our three dynamic phases — <em>Discovery, Evaluation, and Socialisation</em> — we unlock measurable insights across five key resilience areas: infrastructure, environment, economy, institutions, and society. Designed to be adaptable and community-led, the framework provides a powerful tool for tracking progress, guiding investment, and accelerating resilience in a changing climate.</p>
+      </div>
     </div>
   </section>
 
@@ -312,16 +213,6 @@
       const nav = document.getElementById('navLinks');
       nav.classList.toggle('show');
     }
-
-    window.addEventListener('scroll', () => {
-      const hero = document.querySelector('.hero');
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      if (scrollY > 50) {
-        hero.classList.add('shrink');
-      } else {
-        hero.classList.remove('shrink');
-      }
-    }, { passive: true });
   </script>
 </body>
 </html>
