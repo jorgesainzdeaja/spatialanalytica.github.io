@@ -93,6 +93,24 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
+    .project-feature {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .project-feature img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
     .widget-frame iframe {
       width: 100%;
       height: 600px;
@@ -128,6 +146,10 @@
 
       .nav-links.show {
         display: flex;
+      }
+
+      .project-feature {
+        flex-direction: column;
       }
     }
   </style>
