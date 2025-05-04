@@ -95,7 +95,6 @@
 
     .project-feature {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       gap: 20px;
       margin-bottom: 40px;
@@ -104,11 +103,21 @@
       border-radius: 12px;
     }
 
-    .project-feature img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    .project-feature > div:first-child {
+      flex: 0 0 300px;
+      height: 300px;
+      overflow: hidden;
       border-radius: 8px;
+    }
+
+    .project-feature > div:first-child img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-feature > div:last-child {
+      flex: 1;
     }
 
     .widget-frame iframe {
@@ -151,6 +160,17 @@
       .project-feature {
         flex-direction: column;
       }
+
+      .project-feature > div:first-child {
+        width: 100%;
+        height: auto;
+      }
+
+      .project-feature > div:first-child img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
   </style>
 </head>
@@ -168,7 +188,6 @@
       </div>
     </nav>
   </header>
-
   <div class="hero">
     <h1>SPATIAL ANALYTICA</h1>
     <p>Geospatial solutions for Urban Design and Master planning</p>
